@@ -31,13 +31,7 @@ public class Usuario {
     @Column(nullable = false, length = 40)
     private String apellido;
 
-    @Column(nullable = false, unique = true, length = 100)
-    private String correo;
-
-    @Column(nullable = false, length = 100)
-    private String contrasena;
-
-    @Column(unique = true, length = 12)
+    @Column(nullable = false, unique = true, length = 12)
     private String rut;
 
     @Column(nullable = false, length = 12)

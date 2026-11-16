@@ -1,8 +1,6 @@
 package com.induztek.usuarios.controller;
 
 import com.induztek.usuarios.dto.DatosActualizacion;
-import com.induztek.usuarios.dto.DatosCambioContrasena;
-import com.induztek.usuarios.dto.DatosLogin;
 import com.induztek.usuarios.dto.DatosRegistro;
 import com.induztek.usuarios.dto.UsuarioRespuesta;
 import com.induztek.usuarios.service.UsuarioService;
@@ -44,20 +42,9 @@ public class UsuarioController {
         return usuarioService.registrar(datos);
     }
 
-    @PostMapping("/login")
-    public UsuarioRespuesta iniciarSesion(@RequestBody DatosLogin datos) {
-        return usuarioService.iniciarSesion(datos);
-    }
-
     @PutMapping("/{id}")
     public UsuarioRespuesta actualizar(@PathVariable Long id, @RequestBody DatosActualizacion datos) {
         return usuarioService.actualizar(id, datos);
-    }
-
-    @PutMapping("/{id}/contrasena")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void cambiarContrasena(@PathVariable Long id, @RequestBody DatosCambioContrasena datos) {
-        usuarioService.cambiarContrasena(id, datos);
     }
 
     @DeleteMapping("/{id}")

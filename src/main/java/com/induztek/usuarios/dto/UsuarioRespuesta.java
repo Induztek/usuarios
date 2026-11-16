@@ -4,7 +4,6 @@ public record UsuarioRespuesta(
         Long id,
         String nombre,
         String apellido,
-        String correo,
         String rut,
         String telefono,
         Long empresaId,

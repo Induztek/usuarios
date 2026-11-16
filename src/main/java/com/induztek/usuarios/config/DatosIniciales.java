@@ -18,21 +18,19 @@ public class DatosIniciales implements CommandLineRunner {
     public void run(String... args) {
         if (usuarioRepository.count() == 0) {
             usuarioRepository.saveAll(List.of(
-                    usuario("Matías", "Rojas", "tecnico@gmail.com", "16482913-8", "+56911112222", 1L, 1L),
-                    usuario("Pedro", "Salas", "cliente@gmail.com", "14756201-2", "+56933334444", 2L, 2L),
-                    usuario("Daniela", "Vera", "cliente2@gmail.com", "17093845-3", "+56955556666", 3L, 2L),
-                    usuario("Admin", "Induztek", "admin@gmail.com", "13570246-3", "+56977778888", 1L, 3L)
+                    usuario("Matías", "Rojas", "16482913-8", "+56911112222", 1L, 1L),
+                    usuario("Pedro", "Salas", "14756201-2", "+56933334444", 2L, 2L),
+                    usuario("Daniela", "Vera", "17093845-3", "+56955556666", 3L, 2L),
+                    usuario("Admin", "Induztek", "13570246-3", "+56977778888", 1L, 3L)
             ));
         }
     }
 
-    private Usuario usuario(String nombre, String apellido, String correo, String rut,
+    private Usuario usuario(String nombre, String apellido, String rut,
                             String telefono, Long empresaId, Long rolId) {
         return Usuario.builder()
                 .nombre(nombre)
                 .apellido(apellido)
-                .correo(correo)
-                .contrasena("123456")
                 .rut(rut)
                 .telefono(telefono)
                 .empresaId(empresaId)
